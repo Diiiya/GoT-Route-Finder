@@ -3,6 +3,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+	   <children>
+      <BorderPane prefHeight="463.0" prefWidth="652.0">
+         <center>
+            <ImageView fitHeight="353.0" fitWidth="428.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <styleClass>
+                  <String fx:value="-fx-border-color: black;" />
+                  <String fx:value="-fx-border-width: 5;" />
+                  <String fx:value="-fx-border-style: solid;" />
+               </styleClass>
+            </ImageView>
+         </center>
+         <bottom>
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" text="Find route" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" top="5.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+      </BorderPane>
+   </children>
 </AnchorPane>
 
