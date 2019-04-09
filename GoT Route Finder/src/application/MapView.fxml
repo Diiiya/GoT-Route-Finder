@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	   <children>
-      <BorderPane prefHeight="463.0" prefWidth="652.0">
-         <center>
-            <ImageView fitHeight="353.0" fitWidth="428.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <styleClass>
-                  <String fx:value="-fx-border-color: black;" />
-                  <String fx:value="-fx-border-width: 5;" />
-                  <String fx:value="-fx-border-style: solid;" />
-               </styleClass>
-            </ImageView>
-         </center>
-         <bottom>
-            <Button alignment="TOP_CENTER" mnemonicParsing="false" text="Find route" BorderPane.alignment="TOP_CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="20.0" top="5.0" />
-               </BorderPane.margin>
-            </Button>
-         </bottom>
-      </BorderPane>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label text="Zoom" />
+            <Button mnemonicParsing="false" text="-" />
+            <Slider />
+            <Button mnemonicParsing="false" text="+" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Visuals" />
+            <ToggleButton mnemonicParsing="false" text="Contrast" />
+            <ToggleButton mnemonicParsing="false" text="Large GUI" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <SplitPane dividerPositions="0.44648829431438125" VBox.vgrow="ALWAYS">
+         <items>
+            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <Pane>
+                     <children>
+                        <ImageView fx:id="imageView">
+                           <image>
+                              <Image url="@../../../../1.1.jpg" />
+                           </image>
+                        </ImageView>
+                        <MenuButton layoutX="56.0" layoutY="118.0" mnemonicParsing="false" text="MenuButton">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
    </children>
-</AnchorPane>
+</VBox>
 
