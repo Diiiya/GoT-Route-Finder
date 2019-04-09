@@ -2,11 +2,13 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
-import com.sun.javafx.collections.MappingChange.Map;
 
 public class DijkstraGraphClass {
 
@@ -69,11 +71,11 @@ public class DijkstraGraphClass {
 		return route;
 	}
 	
-	private Map<Node, Node> getPreviousNodeMapping() {
+	private Map<NodeClass, NodeClass> getPreviousNodeMapping() {
 
-		Map<Node, Node> mappings = new HashMap<>();
+		Map<NodeClass, NodeClass> mappings = new HashMap<>();
 
-		for(Node n : getGraph().getNodes()) {
+		for(NodeClass n : getGraph().getNodes()) {
 
 			mappings.put(n, null);
 
@@ -83,9 +85,9 @@ public class DijkstraGraphClass {
 
 	}
 	
-	private Node getLowestUnsettledNode(Set<Node> unsettled, Map<Node, Integer> distanceMapping) {
+	private NodeClass getLowestUnsettledNode(Set<NodeClass> unsettled, Map<NodeClass, Integer> distanceMapping) {
 
-		Iterator<Node> iter = unsettled.iterator();
+		Iterator<NodeClass> iter = unsettled.iterator();
 
 		if (!iter.hasNext()) {
 
@@ -93,11 +95,11 @@ public class DijkstraGraphClass {
 
 		}
 
-		Node selected = iter.next();
+		NodeClass selected = iter.next();
 
 		while (iter.hasNext()) {
 
-			Node n = iter.next();
+			NodeClass n = iter.next();
 
 			if (distanceMapping.get(n) < distanceMapping.get(selected)) {
 
@@ -111,11 +113,11 @@ public class DijkstraGraphClass {
 
 	}
 	
-	private Map<Node, Integer> getNodeDistanceMapping(Node from) {
+	private Map<NodeClass, Integer> getNodeDistanceMapping(NodeClass from) {
 
-		Map<Node, Integer> mappings = new HashMap<Node, Integer>();
+		Map<NodeClass, Integer> mappings = new HashMap<NodeClass, Integer>();
 
-		for(Node n : getGraph().getNodes()) {
+		for(NodeClass n : getGraph().getNodes()) {
 
 			mappings.put(n, Integer.MAX_VALUE);
 
