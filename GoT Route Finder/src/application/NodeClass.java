@@ -5,18 +5,22 @@ import java.util.List;
 
 public class NodeClass {
 
-	private String id;
+	private int x;
+	private int y;
+	private String name;
 	private List<LinksClass> links;
 	
-	public NodeClass(String id)
+	public NodeClass(String name, int x, int y)
 	{
-		this.id = id;
+		this.x = x;
+		this.y = y;
+		this.name = name;
 		this.links = new ArrayList<LinksClass>();
 	}
 	
-	public String getId()
+	public String getName()
 	{
-		return id;
+		return name;
 	}
 	
 	public List<LinksClass> getLinks()
@@ -49,12 +53,12 @@ public class NodeClass {
 	@Override
 	public int hashCode()
 	{
-		return id.hashCode();
+		return name.hashCode();
 	}
 	
 	@Override
 	public String toString()
 	{
-		return id + " " + links.size();
+		return name + " " + links.size();
 	}
 }
