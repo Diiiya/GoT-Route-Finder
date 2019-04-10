@@ -5,18 +5,32 @@ import java.util.List;
 
 public class NodeClass {
 
+	private int x;
+	private int y;
 	private String id;
 	private List<LinksClass> links;
 	
-	public NodeClass(String id)
+	public NodeClass(String id, int x, int y)
 	{
 		this.id = id;
+		this.x = x;
+		this.y = y;
 		this.links = new ArrayList<LinksClass>();
 	}
 	
 	public String getId()
 	{
 		return id;
+	}
+	
+	public int getX()
+	{
+		return x;
+	}
+	
+	public int getY()
+	{
+		return y;
 	}
 	
 	public List<LinksClass> getLinks()
@@ -40,10 +54,10 @@ public class NodeClass {
 		this.links.add(new LinksClass(this, neighbour, weight));
 	}
 	
-	public void addTwoWayNeighbour(NodeClass neighbour, int weight)
+	public void addTwoWayNeighbour(LinksClass link)//NodeClass neighbour, int weight)
 	{
-		addOneWayNeighbour(neighbour, weight);
-		neighbour.addOneWayNeighbour(this, weight);
+		addOneWayNeighbour(link.getTo(), link.getWeight());
+		link.getTo().addOneWayNeighbour(this, link.getWeight());
 	}
 	
 	@Override
@@ -55,6 +69,6 @@ public class NodeClass {
 	@Override
 	public String toString()
 	{
-		return id + " " + links.size();
+		return id;
 	}
 }

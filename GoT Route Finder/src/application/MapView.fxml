@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
    <children>
       <HBox prefHeight="23.0" prefWidth="364.0">
          <children>
@@ -50,10 +50,11 @@
                      <children>
                         <ImageView fx:id="imageView">
                            <image>
-                              <Image url="@../../../../../../../../Pictures/Saved%20Pictures/AHMrDCH.jpg" />
+                              <Image url="@AHMrDCH.jpg" />
                            </image>
                         </ImageView>
                         <MenuButton layoutX="56.0" layoutY="118.0" mnemonicParsing="false" text="MenuButton" />
+                        <Button fx:id="button" layoutX="105.0" layoutY="57.0" mnemonicParsing="false" onAction="#findThePath" text="Button" />
                      </children>
                   </Pane>
                </content>

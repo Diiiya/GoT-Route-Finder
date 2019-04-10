@@ -33,10 +33,8 @@ public class DijkstraGraphClass {
 		Set<NodeClass> unsettled = new HashSet<NodeClass>();
 		unsettled.add(from);
 		
-		//defined
 		Set<NodeClass> settled = new HashSet<NodeClass>();
 		
-		//undefined
 		while(unsettled.size() != 0)
 		{
 			NodeClass currentNode = getLowestUnsettledNode(unsettled, nodeDistanceMapping);
