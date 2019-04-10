@@ -7,20 +7,20 @@ public class NodeClass {
 
 	private int x;
 	private int y;
-	private String id;
+	private String name;
 	private List<LinksClass> links;
 	
-	public NodeClass(String id, int x, int y)
+	public NodeClass(String name, int x, int y)
 	{
-		this.id = id;
 		this.x = x;
 		this.y = y;
+		this.name = name;
 		this.links = new ArrayList<LinksClass>();
 	}
 	
-	public String getId()
+	public String getName()
 	{
-		return id;
+		return name;
 	}
 	
 	public int getX()
@@ -63,12 +63,12 @@ public class NodeClass {
 	@Override
 	public int hashCode()
 	{
-		return id.hashCode();
+		return name.hashCode();
 	}
 	
 	@Override
 	public String toString()
 	{
-		return id;
+		return name;
 	}
 }

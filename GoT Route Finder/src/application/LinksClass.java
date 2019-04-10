@@ -31,6 +31,6 @@ public class LinksClass {
 	@Override
 	public String toString()
 	{
-		return "from " + from.getId() + " to " + to.getId() + ", weight " + weight;
+		return "from " + from.getName() + " to " + to.getName() + ", weight " + weight;
 	}
 }
