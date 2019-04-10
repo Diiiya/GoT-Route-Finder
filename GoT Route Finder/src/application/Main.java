@@ -12,9 +12,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
-			//iza ...
-			//BorderPane root = new BorderPane();
 			Parent root = FXMLLoader.load(getClass().getResource("/application/MapView.fxml"));
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

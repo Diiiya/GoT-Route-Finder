@@ -80,8 +80,6 @@ public class MyController {
 		
 		g.setColor(Color.BLACK);
 		
-		//g.setStroke();
-		
 				
 		List<NodeClass> nodeArray = new ArrayList<>();
 		
