@@ -10,7 +10,6 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -24,13 +23,21 @@ public class MyController {
 	
 	BufferedImage bufferedImg;
 	
-	NodeClass A = new NodeClass("A", 100, 200);
+	Collection collection;
+	
+
+	NodeClass from;
+	NodeClass to;
+	
+	
+	
+	/*NodeClass A = new NodeClass("A", 100, 200);
 	
 	NodeClass B = new NodeClass("B", 200, 500);
 	
 	NodeClass C = new NodeClass("c", 300, 500);
 	
-	NodeClass D = new NodeClass("d", 1000, 800);
+	NodeClass D = new NodeClass("d", 1000, 800);*/
 	
 	public List<NodeClass> nodes = new ArrayList<>();
 	
@@ -38,33 +45,33 @@ public class MyController {
 		
 	GraphsClass grc = new GraphsClass(nodes);
 	
-	LinksClass link1 = new LinksClass(A, B, 12);
+	/*LinksClass link1 = new LinksClass(A, B, 12);
 	
 	LinksClass link2 = new LinksClass(A, C, 1);
 	
 	LinksClass link3 = new LinksClass(B, D, 3);
 	
-	LinksClass link4 = new LinksClass(C, D, 5);
+	LinksClass link4 = new LinksClass(C, D, 5);*/
 	
 	
 	DijkstraGraphClass dc;
 	
 	public void findThePath(ActionEvent event)
 	{
-		
-		nodes.add(A);
+		collection = new Collection();
+		/*nodes.add(A);
 		nodes.add(B);
 		nodes.add(C);
-		nodes.add(D);
+		nodes.add(D);*/
 		
 		grc.getNodes();		
 		
-		A.addTwoWayNeighbour(link1);
+		/*A.addTwoWayNeighbour(link1);
 		A.addTwoWayNeighbour(link2);
 		B.addTwoWayNeighbour(link3);
-		C.addTwoWayNeighbour(link4);
+		C.addTwoWayNeighbour(link4);*/
 		
-		for(LinksClass l : A.getLinks())
+		for(LinksClass l : collection.getLinksList())
 		{
 			System.out.println(l);
 		}
@@ -73,7 +80,21 @@ public class MyController {
 		
 		dc = new DijkstraGraphClass(grc);
 		
-		dc.getShortestPath(A, D);
+		for(NodeClass n: collection.getNodesList())
+		{
+			if(n.getName() == "A")
+			{
+				System.out.println(n.getName());
+				from = n;
+			}
+			if(n.getName() == "D")
+			{
+				to = n;
+			}
+		}
+		
+		dc.getShortestPath(from, to);
+		
 		
 		
 		Graphics g = bufferedImg.getGraphics();
@@ -83,7 +104,7 @@ public class MyController {
 				
 		List<NodeClass> nodeArray = new ArrayList<>();
 		
-		for(NodeClass n: dc.getShortestPath(A, D))
+		for(NodeClass n: dc.getShortestPath(from, to))
 		{
 			nodeArray.add(n);
 			System.out.println(n);
