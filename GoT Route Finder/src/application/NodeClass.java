@@ -23,6 +23,16 @@ public class NodeClass {
 		return name;
 	}
 	
+	public int getX()
+	{
+		return x;
+	}
+	
+	public int getY()
+	{
+		return y;
+	}
+	
 	public List<LinksClass> getLinks()
 	{
 		return links;
@@ -39,15 +49,15 @@ public class NodeClass {
 		return nodes;
 	}
 	
-	public void addOneWayNeighbour(NodeClass neighbour, int weight)
+	public void addOneWayNeighbour(NodeClass neighbour, int weight, int difficulty)
 	{
-		this.links.add(new LinksClass(this, neighbour, weight));
+		this.links.add(new LinksClass(this, neighbour, weight, difficulty));
 	}
 	
-	public void addTwoWayNeighbour(NodeClass neighbour, int weight)
+	public void addTwoWayNeighbour(NodeClass neighbour, int weight, int difficulty)
 	{
-		addOneWayNeighbour(neighbour, weight);
-		neighbour.addOneWayNeighbour(this, weight);
+		addOneWayNeighbour(neighbour, weight, difficulty);
+		neighbour.addOneWayNeighbour(this, weight, difficulty);
 	}
 	
 	@Override
@@ -59,6 +69,7 @@ public class NodeClass {
 	@Override
 	public String toString()
 	{
-		return name + " " + links.size();
+		//return name + " " + links.size();
+		return name;
 	}
 }
