@@ -169,7 +169,7 @@ public class Map2Controller {
 		}
 		
 		bg.dispose();
-	    Image newImage = SwingFXUtils.toFXImage(bufferedImage, null );
+	    Image newImage = SwingFXUtils.toFXImage(bufferedImage, null);
 	    imageView.setImage(newImage);
 	}
 	
