@@ -7,7 +7,8 @@ import java.util.List;
 public class ControllerHelper {
 	
 	static NodeClass node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15, node16, node17,
-	node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30;
+	node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30, node31, node32, node33, node34, node35, node36,
+	node37, node38, node39, node40, node41, node42, node43, node44, node45, node46, node47, node48, node49, node50, node51, node52, node53, node54, node55;
 	
 	static List<NodeClass> gotList;
 	
@@ -43,9 +44,36 @@ public class ControllerHelper {
 		node29 = new NodeClass("Ocean Road", 502, 1841);
 		node30 = new NodeClass("The Princess Pass", 780, 2050);
 		
+        node31 = new NodeClass("Braavos", 1450, 1261);
+        node32 = new NodeClass("Lorath", 1650, 1312);
+        node33 = new NodeClass("Norvos", 1722, 1539);
+        node34 = new NodeClass("Pentos", 1460, 1692);
+        node35 = new NodeClass("Ghoyan Drohe", 1602, 1660);
+        node36 = new NodeClass("Qohor", 1969, 1692);
+        node37 = new NodeClass("Ny Sar", 1747, 1742);
+        node38 = new NodeClass("Ar Noy", 1873, 1775);
+        node39 = new NodeClass("The Sorrows", 1795, 1939);
+        node40 = new NodeClass("Myr", 1551, 1958);
+        node41 = new NodeClass("Tyrosh", 1349, 1992);
+        node42 = new NodeClass("Selhorys", 1827, 2066);
+        node43 = new NodeClass("Valysar", 1815, 2127);
+        node44 = new NodeClass("Sar Mell", 1859, 2164);
+        node45 = new NodeClass("Volon Therys", 1845, 2185);
+        node46 = new NodeClass("Volantis", 1913, 2210);
+        node47 = new NodeClass("Lys", 1473, 2201);
+        node48 = new NodeClass("Vaes Khadokh (Essaria)", 2186, 1682);
+        node49 = new NodeClass("Saath", 2242, 1374);
+        node50 = new NodeClass("Morosh", 2324, 1294);
+        node51 = new NodeClass("Vaes Graddakh (Sarys)", 2369, 1361);
+        node52 = new NodeClass("Vaes Khewo (Sarnath)", 2461, 1730);
+        node53 = new NodeClass("Vojjor Samui", 2618, 1693);
+        node54 = new NodeClass("Yalli Qamayi (Sathar)", 2742, 1732);
+        node55 = new NodeClass("Vaes Leqse (Gornath)", 2723, 1644);
+		
 		gotList = new ArrayList<NodeClass>();
 		gotList.addAll(Arrays.asList(node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15, node16,
-				node17, node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30));
+				node17, node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30, node31, node32, node33, node34, node35, node36,
+				node37, node38, node39, node40, node41, node42, node43, node44, node45, node46, node47, node48, node49, node50, node51, node52, node53, node54, node55));
 		
 		return gotList;
 	}
@@ -94,5 +122,35 @@ public class ControllerHelper {
 		node22.addTwoWayNeighbour(node30, 10, 10, 3);
 		node23.addTwoWayNeighbour(node30, 22, 10, 3);
 		node25.addTwoWayNeighbour(node15, 9, 5, 3);
+		
+		node24.addTwoWayNeighbour(node41, 20, 20, 3);
+		node41.addTwoWayNeighbour(node40, 10, 8, 2);
+		node41.addTwoWayNeighbour(node47, 12, 14, 2);
+		node40.addTwoWayNeighbour(node47, 12, 10, 2);
+		node40.addTwoWayNeighbour(node39, 10, 10, 1);
+		node39.addTwoWayNeighbour(node34, 15, 5, 1);
+		node39.addTwoWayNeighbour(node37, 8, 5, 1);
+		node39.addTwoWayNeighbour(node38, 7, 4, 1);
+		node34.addTwoWayNeighbour(node35, 3, 3, 1);
+		node35.addTwoWayNeighbour(node33, 20, 20, 3);
+		node35.addTwoWayNeighbour(node37, 10, 10, 1);
+		node33.addTwoWayNeighbour(node32, 18, 30, 3);
+		node32.addTwoWayNeighbour(node31, 15, 20, 3);
+		node33.addTwoWayNeighbour(node36, 18, 25, 3);
+		node36.addTwoWayNeighbour(node38, 10, 5, 1);
+		node36.addTwoWayNeighbour(node48, 12, 10, 2);
+		node48.addTwoWayNeighbour(node49, 17, 10, 1);
+		node49.addTwoWayNeighbour(node50, 6, 0, 1);
+		node50.addTwoWayNeighbour(node51, 6, 5, 1);
+		node48.addTwoWayNeighbour(node52, 10, 10, 1);
+		node52.addTwoWayNeighbour(node53, 8, 5, 1);
+		node53.addTwoWayNeighbour(node54, 6, 5, 1);
+		node54.addTwoWayNeighbour(node55, 7, 10, 2);
+		node39.addTwoWayNeighbour(node42, 6, 5, 1);
+		node42.addTwoWayNeighbour(node43, 3, 1, 1);
+		node42.addTwoWayNeighbour(node44, 4, 5, 1);
+		node43.addTwoWayNeighbour(node45, 5, 5, 1);
+		node45.addTwoWayNeighbour(node44, 7, 8, 2);
+		node44.addTwoWayNeighbour(node46, 5, 5, 1);		
 	}
 }
