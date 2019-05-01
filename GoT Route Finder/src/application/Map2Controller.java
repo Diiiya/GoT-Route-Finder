@@ -57,7 +57,7 @@ public class Map2Controller {
 	
 	private GraphsClass gotGraph;
 	private List<NodeClass> gotList;
-	private ControllerHelper controllerHelper;
+	//private ControllerHelper controllerHelper;
 	
 	HashMap<MenuItem, NodeClass> startPoints;
 	HashMap<MenuItem, NodeClass> endPoints;
@@ -96,7 +96,6 @@ public class Map2Controller {
 		for (int i=0; i< gotList.size(); i++) {
 			passByCB.getItems().add(gotList.get(i));
 		}
-
 	}
 	
 
@@ -176,9 +175,7 @@ public class Map2Controller {
 		imageView.setImage(image);
 		bufferedImage = SwingFXUtils.fromFXImage(imageView.getImage(), null);
 				
-		//startNode = getStartPoint(startPointCB);
 		startNode = startPointCB.getValue();
-		//endNode = getEndPoint(endPointCB);
 		endNode = endPointCB.getValue();
 		System.out.println("The start point is " + startNode);
 		
@@ -197,12 +194,12 @@ public class Map2Controller {
 		
 		startNode = startPointCB.getValue();
 		endNode = endPointCB.getValue();
-		
+	
 		System.out.println("Safest from " + startNode + " to " + endNode);
-		
+	
 		DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
 		List<NodeClass> path = dGraph.getPath(startNode, endNode, "safest");
-		
+	
 		color = color.MAGENTA;
 		getPath(path, color);
 
