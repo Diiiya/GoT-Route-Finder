@@ -8,6 +8,7 @@ public class ControllerHelper {
 	
 	static NodeClass node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15, node16, node17,
 	node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30;
+	
 	static List<NodeClass> gotList;
 	
 	public static List<NodeClass> createNodes() {
@@ -94,5 +95,4 @@ public class ControllerHelper {
 		node23.addTwoWayNeighbour(node30, 22, 10, 3);
 		node25.addTwoWayNeighbour(node15, 9, 5, 3);
 	}
-
 }

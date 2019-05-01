@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class DijkstraGraphClass {
 
-	private GraphsClass graph;
+private GraphsClass graph;
 	
 	public DijkstraGraphClass(GraphsClass graph)
 	{
@@ -24,7 +24,7 @@ public class DijkstraGraphClass {
 		return graph;
 	}
 	
-	public List<NodeClass> getShortestPath(NodeClass from, NodeClass to)
+	public List<NodeClass> getPath(NodeClass from, NodeClass to, String kindOfPath)
 	{
 		Map<NodeClass, Integer> nodeDistanceMapping = getNodeDistanceMapping(from);
 		
@@ -45,7 +45,19 @@ public class DijkstraGraphClass {
 			for(final LinksClass l: currentNode.getLinks())
 			{
 				int currentNeighbourDistance = nodeDistanceMapping.get(l.getTo());
-				int newNeighbourDistance = currentDistance + l.getWeight();
+				int newNeighbourDistance = 0;
+				if(kindOfPath == "shortest") {
+					
+					newNeighbourDistance = currentDistance + l.getWeight();					
+				}
+				if(kindOfPath == "easiest") {
+					
+					newNeighbourDistance = currentDistance + l.getDifficulty();					
+				}
+				if(kindOfPath == "safest") {
+					
+					newNeighbourDistance = currentDistance + l.getSafety();					
+				}
 				
 				if(!settled.contains(l.getTo()) && newNeighbourDistance < currentNeighbourDistance)
 				{
@@ -126,5 +138,4 @@ public class DijkstraGraphClass {
 		return mappings;
 
 	}
-	
 }

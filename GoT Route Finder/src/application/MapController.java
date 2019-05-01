@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class MapController {
 
-private GraphsClass graph;
+	private GraphsClass graph;
 	
 	public MapController(GraphsClass graph)
 	{

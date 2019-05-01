@@ -73,7 +73,7 @@ public class MyController {
 		
 		dc = new DijkstraGraphClass(grc);
 		
-		dc.getShortestPath(A, D);
+		//dc.getShortestPath(A, D);
 		
 		
 		Graphics g = bufferedImg.getGraphics();
@@ -83,11 +83,11 @@ public class MyController {
 				
 		List<NodeClass> nodeArray = new ArrayList<>();
 		
-		for(NodeClass n: dc.getShortestPath(A, D))
+		/*for(NodeClass n: dc.getShortestPath(A, D))
 		{
 			nodeArray.add(n);
 			System.out.println(n);
-		}
+		}*/
 		
 		
 		for(int i = 0; i < nodeArray.size(); i++)
