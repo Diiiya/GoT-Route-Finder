@@ -3,7 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NodeClass {
+public class NodeClass implements Comparable<NodeClass>{
 
 	private int x;
 	private int y;
@@ -70,5 +70,10 @@ public class NodeClass {
 	public String toString()
 	{
 		return name;
+	}
+
+	@Override
+	public int compareTo(NodeClass other) {
+		return name.compareTo(other.name);
 	}
 }

@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -75,6 +76,7 @@ public class Map2Controller {
 		
 		gotList = new ArrayList<NodeClass>();
 		gotList = ControllerHelper.createNodes();
+		Collections.sort(gotList);
 		ControllerHelper.linkNodes();
 		gotGraph = new GraphsClass(gotList);
 
