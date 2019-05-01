@@ -71,16 +71,16 @@ public class MyController {
 		B.addTwoWayNeighbour(link3);
 		C.addTwoWayNeighbour(link4);*/
 		
-		for(LinksClass l : collection.getLinksList())
+		/*for(LinksClass l : collection.createLinks())
 		{
 			System.out.println(l);
-		}
+		}*/
 		
 		bufferedImg = SwingFXUtils.fromFXImage(imageView.getImage(), null);
 		
 		dc = new DijkstraGraphClass(grc);
 		
-		for(NodeClass n: collection.getNodesList())
+		for(NodeClass n: collection.createNodes())
 		{
 			if(n.getName() == "A")
 			{

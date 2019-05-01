@@ -54,10 +54,10 @@ public class NodeClass {
 		this.links.add(new LinksClass(this, neighbour, weight));
 	}
 	
-	public void addTwoWayNeighbour(LinksClass link)//NodeClass neighbour, int weight)
+	public void addTwoWayNeighbour(NodeClass neighbour, int weight)//LinksClass link)//NodeClass neighbour, int weight)
 	{
-		addOneWayNeighbour(link.getTo(), link.getWeight());
-		link.getTo().addOneWayNeighbour(this, link.getWeight());
+		addOneWayNeighbour(neighbour, weight);
+		neighbour.addOneWayNeighbour(this, weight);
 	}
 	
 	@Override
