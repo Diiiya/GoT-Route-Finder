@@ -38,13 +38,13 @@ public class MyController {
 		
 	GraphsClass grc = new GraphsClass(nodes);
 	
-	LinksClass link1 = new LinksClass(A, B, 12);
+	/*LinksClass link1 = new LinksClass(A, B, 12);
 	
 	LinksClass link2 = new LinksClass(A, C, 1);
 	
 	LinksClass link3 = new LinksClass(B, D, 3);
 	
-	LinksClass link4 = new LinksClass(C, D, 5);
+	LinksClass link4 = new LinksClass(C, D, 5);*/
 	
 	
 	DijkstraGraphClass dc;
@@ -59,10 +59,10 @@ public class MyController {
 		
 		grc.getNodes();		
 		
-		A.addTwoWayNeighbour(link1);
+		/*A.addTwoWayNeighbour(link1);
 		A.addTwoWayNeighbour(link2);
 		B.addTwoWayNeighbour(link3);
-		C.addTwoWayNeighbour(link4);
+		C.addTwoWayNeighbour(link4);*/
 		
 		for(LinksClass l : A.getLinks())
 		{
