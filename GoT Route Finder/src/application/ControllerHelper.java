@@ -6,9 +6,8 @@ import java.util.List;
 
 public class ControllerHelper {
 	
-	//private List<NodeClass> gotList;
 	static NodeClass node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15, node16, node17,
-	node18, node19, node20, node21, node22, node23, node24, node25;
+	node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30;
 	static List<NodeClass> gotList;
 	
 	public static List<NodeClass> createNodes() {
@@ -37,10 +36,15 @@ public class ControllerHelper {
 		node23 = new NodeClass("Oldtown", 515, 2080);
 		node24 = new NodeClass("Sunspear", 1200, 2190);
 		node25 = new NodeClass("The Eyrie", 1040, 1390);
+		node26 = new NodeClass("Boneway 1", 920, 2008);
+		node27 = new NodeClass("Boneway 2", 894, 2098);
+		node28 = new NodeClass("Tarth", 1206, 1856);
+		node29 = new NodeClass("Ocean Road", 502, 1841);
+		node30 = new NodeClass("The Princess Pass", 780, 2050);
 		
 		gotList = new ArrayList<NodeClass>();
 		gotList.addAll(Arrays.asList(node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15, node16,
-				node17, node18, node19, node20, node21, node22, node23, node24, node25));
+				node17, node18, node19, node20, node21, node22, node23, node24, node25, node26, node27, node28, node29, node30));
 		
 		return gotList;
 	}
@@ -62,6 +66,7 @@ public class ControllerHelper {
 		node10.addTwoWayNeighbour(node14, 15, 5);
 		node10.addTwoWayNeighbour(node25, 13, 10);
 		node12.addTwoWayNeighbour(node11, 5, 10);
+		node12.addTwoWayNeighbour(node18, 8, 5);
 		node14.addTwoWayNeighbour(node13, 11, 5);
 		node14.addTwoWayNeighbour(node15, 8, 15);
 		node14.addTwoWayNeighbour(node20, 12, 10);
@@ -71,14 +76,22 @@ public class ControllerHelper {
 		node16.addTwoWayNeighbour(node17, 7, 10);
 		node18.addTwoWayNeighbour(node19, 30, 5);
 		node18.addTwoWayNeighbour(node17, 4, 0);
-		node18.addTwoWayNeighbour(node22, 27, 0);
+		node18.addTwoWayNeighbour(node22, 27, 5);
+		node18.addTwoWayNeighbour(node29, 15, 0);
 		node19.addTwoWayNeighbour(node20, 10, 10);
 		node19.addTwoWayNeighbour(node22, 45, 5);
 		node19.addTwoWayNeighbour(node21, 17, 8);
 		node21.addTwoWayNeighbour(node22, 28, 8);
-		//node21.addTwoWayNeighbour(node24, 39, 15);
+		node21.addTwoWayNeighbour(node26, 15, 15);
+		node21.addTwoWayNeighbour(node28, 5, 5);
+		node26.addTwoWayNeighbour(node27, 10, 10);
+		node27.addTwoWayNeighbour(node24, 20, 8);
 		node22.addTwoWayNeighbour(node23, 11, 0);
-		node23.addTwoWayNeighbour(node24, 48, 10);
+		node22.addTwoWayNeighbour(node26, 12, 8);
+		node22.addTwoWayNeighbour(node29, 15, 0);
+		node27.addTwoWayNeighbour(node30, 9, 10);
+		node22.addTwoWayNeighbour(node30, 10, 10);
+		node23.addTwoWayNeighbour(node30, 22, 10);
 		node25.addTwoWayNeighbour(node15, 9, 5);
 	}
 
