@@ -19,7 +19,8 @@
 
 <VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">-->
 <!--<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">-->
-<VBox minHeight="750.0" minWidth="930.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">
+
+<VBox minHeight="750.0" minWidth="930.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">
    <children>
       <HBox prefHeight="23.0" prefWidth="364.0">
          <children>
@@ -70,6 +71,11 @@
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin></Button>
+            <Button fx:id="findSafestRouteButton" mnemonicParsing="false" onAction="#findSafestRoute" text="Get safest route">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
             <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" text="Clear">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

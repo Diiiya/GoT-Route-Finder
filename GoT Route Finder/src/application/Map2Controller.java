@@ -42,6 +42,9 @@ public class Map2Controller {
 	
 	@FXML
 	private Button findEasiestRouteButton;
+
+	@FXML
+	private Button findSafestRouteButton;
 	
 	@FXML
 	private Button clearButton;
@@ -107,8 +110,11 @@ public class Map2Controller {
 	    startNode = startPointCB.getValue();
 		endNode = endPointCB.getValue();
 		System.out.println("The start point is " + startNode);
-		DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
-		List<NodeClass> path = dGraph.getShortestPath(startNode, endNode);
+		//DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
+		//List<NodeClass> path = dGraph.getShortestPath(startNode, endNode);
+		MapController mc = new MapController(gotGraph);
+		List<NodeClass> path = mc.getPath(startNode, endNode, "shortest");
+		
 		color = color.BLUE;
 		getPath(path, color);
 		}
@@ -117,9 +123,12 @@ public class Map2Controller {
 			middleNode = passByCB.getValue();
 			endNode = endPointCB.getValue();
 			System.out.println("The start point is " + startNode);
-			DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
-			List<NodeClass> path1 = dGraph.getShortestPath(startNode, middleNode);
-			List<NodeClass> path2 = dGraph.getShortestPath(middleNode, endNode);
+			//DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
+			//List<NodeClass> path1 = dGraph.getShortestPath(startNode, middleNode);
+			//List<NodeClass> path2 = dGraph.getShortestPath(middleNode, endNode);
+			MapController mc = new MapController(gotGraph);
+			List<NodeClass> path1 = mc.getPath(startNode, middleNode, "shortest");
+			List<NodeClass> path2 = mc.getPath(middleNode, endNode, "shortest");
 			color = color.BLUE;
 			getPath(path1, color);
 			getPath(path2, color);
@@ -178,9 +187,33 @@ public class Map2Controller {
 		endNode = endPointCB.getValue();
 		System.out.println("The start point is " + startNode);
 		
-		EasiestPath dGraph = new EasiestPath(gotGraph);
-		List<NodeClass> path = dGraph.getEasiestPath(startNode, endNode);
+		//EasiestPath dGraph = new EasiestPath(gotGraph);
+		//List<NodeClass> path = dGraph.getEasiestPath(startNode, endNode);
+
+		MapController mc = new MapController(gotGraph);
+		List<NodeClass> path = mc.getPath(startNode, endNode, "easiest");
 		color = color.GREEN;
+		getPath(path, color);
+
+	}
+	
+public void findSafestRoute(ActionEvent e) {
+		
+		imageView.setImage(image);
+		bufferedImage = SwingFXUtils.fromFXImage(imageView.getImage(), null);
+				
+		//startNode = getStartPoint(startPointCB);
+		startNode = startPointCB.getValue();
+		//endNode = getEndPoint(endPointCB);
+		endNode = endPointCB.getValue();
+		System.out.println("The start point is " + startNode);
+		
+		//EasiestPath dGraph = new EasiestPath(gotGraph);
+		//List<NodeClass> path = dGraph.getEasiestPath(startNode, endNode);
+
+		MapController mc = new MapController(gotGraph);
+		List<NodeClass> path = mc.getPath(startNode, endNode, "safest");
+		color = color.YELLOW;
 		getPath(path, color);
 
 	}

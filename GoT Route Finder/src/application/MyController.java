@@ -98,9 +98,7 @@ public class MyController {
 				NodeClass node2 = nodeArray.get(i + 1);
 				g.drawLine(node1.getX(), node1.getY(), node2.getX(), node2.getY());
 			}
-		}
-		
-		
+		}		
 		
 		g.dispose();
 		

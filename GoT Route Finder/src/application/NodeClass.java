@@ -49,15 +49,15 @@ public class NodeClass {
 		return nodes;
 	}
 	
-	public void addOneWayNeighbour(NodeClass neighbour, int weight, int difficulty)
+	public void addOneWayNeighbour(NodeClass neighbour, int weight, int difficulty, int safety)
 	{
-		this.links.add(new LinksClass(this, neighbour, weight, difficulty));
+		this.links.add(new LinksClass(this, neighbour, weight, difficulty, safety));
 	}
 	
-	public void addTwoWayNeighbour(NodeClass neighbour, int weight, int difficulty)
+	public void addTwoWayNeighbour(NodeClass neighbour, int weight, int difficulty, int safety)
 	{
-		addOneWayNeighbour(neighbour, weight, difficulty);
-		neighbour.addOneWayNeighbour(this, weight, difficulty);
+		addOneWayNeighbour(neighbour, weight, difficulty, safety);
+		neighbour.addOneWayNeighbour(this, weight, difficulty, safety);
 	}
 	
 	@Override
