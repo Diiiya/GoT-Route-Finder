@@ -9,12 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
-public class DijkstraGraphClass {
-
+public class EasiestPath {
+	
 private GraphsClass graph;
 	
-	public DijkstraGraphClass(GraphsClass graph)
+	public EasiestPath(GraphsClass graph)
 	{
 		this.graph = graph;
 	}
@@ -24,7 +23,7 @@ private GraphsClass graph;
 		return graph;
 	}
 	
-	public List<NodeClass> getPath(NodeClass from, NodeClass to, String kindOfPath)
+	public List<NodeClass> getEasiestPath(NodeClass from, NodeClass to)
 	{
 		Map<NodeClass, Integer> nodeDistanceMapping = getNodeDistanceMapping(from);
 		
@@ -33,8 +32,10 @@ private GraphsClass graph;
 		Set<NodeClass> unsettled = new HashSet<NodeClass>();
 		unsettled.add(from);
 		
+		//defined
 		Set<NodeClass> settled = new HashSet<NodeClass>();
 		
+		//undefined
 		while(unsettled.size() != 0)
 		{
 			NodeClass currentNode = getLowestUnsettledNode(unsettled, nodeDistanceMapping);
@@ -45,19 +46,7 @@ private GraphsClass graph;
 			for(final LinksClass l: currentNode.getLinks())
 			{
 				int currentNeighbourDistance = nodeDistanceMapping.get(l.getTo());
-				int newNeighbourDistance = 0;
-				if(kindOfPath == "shortest") {
-					
-					newNeighbourDistance = currentDistance + l.getWeight();					
-				}
-				if(kindOfPath == "easiest") {
-					
-					newNeighbourDistance = currentDistance + l.getDifficulty();					
-				}
-				if(kindOfPath == "safest") {
-					
-					newNeighbourDistance = currentDistance + l.getSafety();					
-				}
+				int newNeighbourDistance = currentDistance + l.getDifficulty();
 				
 				if(!settled.contains(l.getTo()) && newNeighbourDistance < currentNeighbourDistance)
 				{
@@ -138,4 +127,6 @@ private GraphsClass graph;
 		return mappings;
 
 	}
+	
+
 }
