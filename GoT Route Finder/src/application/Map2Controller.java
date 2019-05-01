@@ -73,31 +73,26 @@ public class Map2Controller {
 		gotList = new ArrayList<NodeClass>();
 		gotList = ControllerHelper.createNodes();
 		ControllerHelper.linkNodes();
-		
-		
 		gotGraph = new GraphsClass(gotList);
 
-
-
 		// Adding items to the start point check box
-		startPointCB.getItems().addAll(gotList.get(0), gotList.get(1), gotList.get(2), gotList.get(3), gotList.get(4), gotList.get(5), gotList.get(6));
-		startPointCB.getItems().addAll(gotList.get(7), gotList.get(8), gotList.get(9), gotList.get(10), gotList.get(11), gotList.get(12), gotList.get(13));
-		startPointCB.getItems().addAll(gotList.get(14), gotList.get(15), gotList.get(16), gotList.get(17), gotList.get(18), gotList.get(19), gotList.get(20));
-		startPointCB.getItems().addAll(gotList.get(21), gotList.get(22), gotList.get(23), gotList.get(24));
+		for (int i=0; i< gotList.size(); i++) {
+			startPointCB.getItems().add(gotList.get(i));
+		}
 		startPointCB.setValue(gotList.get(1));
 				
 	    // Adding items to the end point check box
-		endPointCB.getItems().addAll(gotList.get(0), gotList.get(1), gotList.get(2), gotList.get(3), gotList.get(4), gotList.get(5), gotList.get(6));
-		endPointCB.getItems().addAll(gotList.get(7), gotList.get(8), gotList.get(9), gotList.get(10), gotList.get(11), gotList.get(12), gotList.get(13));
-		endPointCB.getItems().addAll(gotList.get(14), gotList.get(15), gotList.get(16), gotList.get(17), gotList.get(18), gotList.get(19), gotList.get(20));
-		endPointCB.getItems().addAll(gotList.get(21), gotList.get(22), gotList.get(23), gotList.get(24));
+		
+		for (int i=0; i< gotList.size(); i++) {
+			endPointCB.getItems().add(gotList.get(i));
+		}
 		endPointCB.setValue(gotList.get(24));
 		
 		// Adding items to the pass by point check box
-		passByCB.getItems().addAll(null, gotList.get(0), gotList.get(1), gotList.get(2), gotList.get(3), gotList.get(4), gotList.get(5), gotList.get(6));
-		passByCB.getItems().addAll(gotList.get(7), gotList.get(8), gotList.get(9), gotList.get(10), gotList.get(11), gotList.get(12), gotList.get(13));
-		passByCB.getItems().addAll(gotList.get(14), gotList.get(15), gotList.get(16), gotList.get(17), gotList.get(18), gotList.get(19), gotList.get(20));
-		passByCB.getItems().addAll(gotList.get(21), gotList.get(22), gotList.get(23), gotList.get(24));
+		passByCB.getItems().add(null);
+		for (int i=0; i< gotList.size(); i++) {
+			passByCB.getItems().add(gotList.get(i));
+		}
 
 	}
 	
@@ -109,8 +104,8 @@ public class Map2Controller {
 		bufferedImage = SwingFXUtils.fromFXImage(imageView.getImage(), null);
 		
 		if (passByCB.getValue() == null) {
-		startNode = getStartPoint(startPointCB);
-		endNode = getEndPoint(endPointCB);
+	    startNode = startPointCB.getValue();
+		endNode = endPointCB.getValue();
 		System.out.println("The start point is " + startNode);
 		DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
 		List<NodeClass> path = dGraph.getShortestPath(startNode, endNode);
@@ -118,9 +113,9 @@ public class Map2Controller {
 		getPath(path, color);
 		}
 		else {
-			startNode = getStartPoint(startPointCB);
-			middleNode = getEndPoint(passByCB);
-			endNode = getEndPoint(endPointCB);
+			startNode = startPointCB.getValue();
+			middleNode = passByCB.getValue();
+			endNode = endPointCB.getValue();
 			System.out.println("The start point is " + startNode);
 			DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
 			List<NodeClass> path1 = dGraph.getShortestPath(startNode, middleNode);
@@ -138,7 +133,6 @@ public class Map2Controller {
 	private void getPath(List<NodeClass> path, Color color) {
         Graphics bg = bufferedImage.getGraphics();
         
-		
 		for (int i=0; i<path.size(); i++) 
 		{ 
 		    NodeClass obj = path.get(i);
@@ -180,7 +174,8 @@ public class Map2Controller {
 				
 		//startNode = getStartPoint(startPointCB);
 		startNode = startPointCB.getValue();
-		endNode = getEndPoint(endPointCB);
+		//endNode = getEndPoint(endPointCB);
+		endNode = endPointCB.getValue();
 		System.out.println("The start point is " + startNode);
 		
 		EasiestPath dGraph = new EasiestPath(gotGraph);
@@ -194,17 +189,5 @@ public class Map2Controller {
         imageView.setImage(image);
 	}
 
-	private NodeClass getStartPoint(ChoiceBox<NodeClass> startPointCB) {
-		NodeClass startNode = startPointCB.getValue();
-		return startNode;
-	}
-	
-	private NodeClass getEndPoint(ChoiceBox<NodeClass> endPointCB) {
-		NodeClass endNode = endPointCB.getValue();
-		return endNode;
-	}
-	
-
-	
 
 }
