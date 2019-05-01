@@ -203,7 +203,7 @@ public class Map2Controller {
 		DijkstraGraphClass dGraph = new DijkstraGraphClass(gotGraph);
 		List<NodeClass> path = dGraph.getPath(startNode, endNode, "safest");
 		
-		color = color.YELLOW;
+		color = color.MAGENTA;
 		getPath(path, color);
 
 	}
