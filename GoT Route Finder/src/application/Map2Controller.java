@@ -58,10 +58,6 @@ public class Map2Controller {
 	
 	private GraphsClass gotGraph;
 	private List<NodeClass> gotList;
-	//private ControllerHelper controllerHelper;
-	
-	HashMap<MenuItem, NodeClass> startPoints;
-	HashMap<MenuItem, NodeClass> endPoints;
  
 	NodeClass startNode;
 	NodeClass endNode;
@@ -87,7 +83,6 @@ public class Map2Controller {
 		startPointCB.setValue(gotList.get(1));
 				
 	    // Adding items to the end point check box
-		
 		for (int i=0; i< gotList.size(); i++) {
 			endPointCB.getItems().add(gotList.get(i));
 		}
@@ -130,9 +125,6 @@ public class Map2Controller {
 			getPath(path2, color);
 			
 		}
-		
-		
-
 	}
 	
 	private void getPath(List<NodeClass> path, Color color) {

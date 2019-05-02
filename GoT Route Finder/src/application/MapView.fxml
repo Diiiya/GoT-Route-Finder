@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="750.0" minWidth="930.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">
+<VBox minHeight="750.0" minWidth="930.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Map2Controller">
    <children>
       <HBox prefHeight="23.0" prefWidth="364.0">
          <children>
